@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-chess-app/static/css/main.90a9ff4b.css",
+    "main.js": "/react-chess-app/static/js/main.bfd7ff02.js",
+    "index.html": "/react-chess-app/index.html",
+    "main.90a9ff4b.css.map": "/react-chess-app/static/css/main.90a9ff4b.css.map",
+    "main.bfd7ff02.js.map": "/react-chess-app/static/js/main.bfd7ff02.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.90a9ff4b.css",
+    "static/js/main.bfd7ff02.js"
+  ]
+}
