@@ -1,5 +1,123 @@
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:100%;
+  background-color: burlywood;
+
+}
+
+html, body,#root{
+  height: 100%;
+}
+
+img {
+  pointer-events: none;
+  user-select: none;
+}
+
+.piece{
+  margin: 0px;
+  padding: 0px;
+
+}
+
+.chess-board{
+  display: grid;
+  width: 500px;
+  height: 500px;
+  color: black;
+  grid-template-rows: repeat(9,55.55px);  
+  grid-template-columns: repeat(9,55.55px);
+  
+ 
+}
+
+.history{
+  background-color:gray;
+  height:200px; 
+  width:250px; 
+  position:relative; 
+  left:20px;
+  border-radius: 5px;
+ 
+}
+
+.entry{
+  height:40px;
+  display: flex;
+  align-items: center;
+}
+
+button{
+  height: 75%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.number-background,.line,.wrapper,.buttons{
+  position: absolute;
+}
+
+.number-background{
+  background-color:rgb(97, 97, 97); 
+  height:80%;
+  width:20%;
+  border-top-left-radius: 5px
+}
+
+.line{
+  border-top:1px solid black;
+  top:80%;
+  width:100%;
+}
+
+.wrapper{
+  overflow-y:scroll; 
+  overflow-x:hidden;
+  height:80%;
+  width:100%;
+}
+
+.moves{
+  display:flex; 
+  flex-direction:row;
+  flex-wrap:wrap;
+}
+
+.buttons{ 
+  display:flex;
+  height:20%;
+  width:100%;
+  top:80%;
+  justify-content:space-evenly;
+}
+
+
+.move{
+  position: relative;
+  left: 5px;
+  width: 40%;
+}
+
+.number{
+  justify-content: center;
+  width:20%;
+
+}
+
+.highlight{
+  
+  width: 55.55px;
+  height: 100%;
+  background-color:yellow;
+  
+}
+
+.square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-logo {

@@ -1,23 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import Board from "./components/Board"
+import History from './components/History';
+import { useRef, useState } from 'react';
+import { Chess } from 'chess.js';
 
 function App() {
+
+  const [gameState,setGameState] = useState(new Chess());
+  const [moveTaken, setMoveTaken]=useState(false);
+  const clear=useRef(false);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Board
+      gameState={gameState}
+      moveTaken={moveTaken}
+      setMoveTaken={setMoveTaken}
+      clear={clear}
+      />
+
+      <History
+      gameState={gameState}
+      clear={clear}
+      moveTaken={moveTaken}
+      setMoveTaken={setMoveTaken}
+      setGameState={setGameState}
+      />
+
     </div>
   );
 }
