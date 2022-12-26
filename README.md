@@ -1,12 +1,12 @@
 
-# Builing a Chess AI
+# Building a Chess AI
 
 This project is chess game app implemented using React. The game involves one user against an AI system of my design.
 
 [Click here for demo.](https://samueltesfai.github.io/react-chess-app/)
 
 <p >
-<img height="500" alt="Screen Shot 2022-12-25 at 5 33 35 PM" src="https://user-images.githubusercontent.com/67299283/209488545-bb79aaf1-a080-4569-b7c2-8a722b3fc06b.png">
+<img height="500" alt="Screen Shot 2022-12-25 at 6 52 48 PM" src="https://user-images.githubusercontent.com/67299283/209493958-90f8ec18-0452-46ae-aaf6-1f8eab431869.png">
 </p>
 
 ## Description
