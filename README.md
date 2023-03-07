@@ -14,10 +14,10 @@ Check master branch for source code.
 ## Description
 
 The frontend for this project was implemented using React JavaScript. The AI was created with the alpha-beta pruning search algorithm with a depth of 4. 
-The heuristic function used to evaluate game positions in this working version of the app only considers the total material of each player. The actual
-chess game logic is not implemented and instead I used the chess.js API to handle it (implementing the game logic is not the focus of the project and 
-is a bit involved). A future goal of the project is to train a neural network to see if we can produce a better heuristic function with it. 
+The heuristic function used to evaluate game positions in this working version of the app only considers the total material of each player. 
+
+I currently have a trained network using PyTorch that evaluates game positions that works pretty well for certain positions (check the main branch for relevant code). Before integrating it into the final app however, I would like experiment some more to get a better final model. One limitation the current model has is evaluating board positions near the start of the game.  
 
 ## To Do
 
-Train a neural network and incorporate it in the heuristic function.
+Keep working on the network then incorporate it in the heuristic function.
