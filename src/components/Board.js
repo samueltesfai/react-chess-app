@@ -29,11 +29,11 @@ function Board(props) {
             });
 
             let movePromise = new Promise((resolve) => {
-                // wait for 100 to make sure the browser updates screen properly before execution
+                // wait for 200 to make sure the browser updates screen properly before execution
                 setTimeout(() => {
                     let move = BlackBot.current.move();
                     resolve(move);
-                }, 100);
+                }, 200);
             });
 
             Promise.all([movePromise, timerPromise]).then((values) => {
