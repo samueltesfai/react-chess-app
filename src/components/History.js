@@ -1,11 +1,10 @@
-import { Chess } from "chess.js";
 import { useRef } from "react";
 import { useEffect } from "react";
 
 
 function History(props) {
 
-    const { gameState, setGameState, clear, moveTaken, setMoveTaken } = props;
+    const { gameStateRef, clear, undoTaken, setUndoTaken } = props;
     const gameLog = [];
     const bottom = useRef();
 
@@ -15,10 +14,9 @@ function History(props) {
     }
 
     const resetGame = () => {
-        if (gameState.turn() === 'b') return;
         clear.current = true;
-        setMoveTaken(!moveTaken);
-        setGameState(new Chess());
+        gameStateRef.current = null;
+        setUndoTaken(!undoTaken);
     }
 
     useEffect(() => {
@@ -26,19 +24,19 @@ function History(props) {
     });
 
     const undo = () => {
-        if (gameState.turn() === 'b' || gameLog.length <= 1) return;
-        gameState.undo();
-        gameState.undo();
+        if (gameLog.length <= 1) return;
+        gameStateRef.current.undo(true);
+        gameStateRef.current.undo(true);
         clear.current = true;
-        setMoveTaken(!moveTaken);
+        setUndoTaken(!undoTaken);
 
     }
 
-    for (let i = 0; i < gameState.history().length; i++) {
+    for (let i = 0; i < gameStateRef.current.history().length; i++) {
         if (i % 2 === 0) {
             gameLog.push(<div key={`num:${i / 2 + 1}`} className="entry number">{i / 2 + 1}</div>)
         }
-        gameLog.push(<div key={i} className="move entry">{gameState.history({ verbose: true })[i].san}</div>)
+        gameLog.push(<div key={i} className="move entry">{gameStateRef.current.history({ verbose: true })[i].san}</div>)
     }
     gameLog.push(<div key="end" ref={bottom} />)
 
@@ -53,8 +51,8 @@ function History(props) {
                 </div>
             </div>
             <div className="buttons">
-                <button onClick={undo}>Undo</button>
-                <button onClick={resetGame}>Reset</button>
+                <button onClick={undo} disabled={gameStateRef.current.turn() === 'b' && !gameStateRef.current.isGameOver()}>Undo</button>
+                <button onClick={resetGame} disabled={gameStateRef.current.turn() === 'b' && !gameStateRef.current.isGameOver()}>Reset</button>
             </div>
         </div>
     )

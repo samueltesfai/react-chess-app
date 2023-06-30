@@ -10,7 +10,7 @@ function Piece(props){
         b:'bishop'
     }
     const size='40';
-    const path=`assets/${props.color}_${type_name[props.type]}_svg_withShadow.svg`;
+    const path=`${process.env.PUBLIC_URL}/assets/${props.color}_${type_name[props.type]}_svg_withShadow.svg`;
 
     return (<img className="piece" src={path} alt='' width={size} height={size}/>)
 

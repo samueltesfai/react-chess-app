@@ -1,5 +1,6 @@
 import Piece from "./Piece"
 
+
 function Square(props) {
     const pos = props.pos;
     const gameState = props.gameState;
@@ -8,10 +9,15 @@ function Square(props) {
 
 
     function handleClick() {
-        if (
+
+        if (from.current === pos) {
+            from.current = '';
+            props.setPossibleMoves([]);
+        }
+        else if (
             from.current === '' ||
-            (gameState.move({ from: from.current, to: pos }) === null &&
-            gameState.move({ from: from.current, to: pos, promotion: 'q' }) === null)
+            (gameState.move({ from: from.current, to: pos }, true) === null && //illegal
+                gameState.move({ from: from.current, to: pos, promotion: 'q' }, true) === null) //queen promo move
         ) {
 
             let moves = gameState.moves({ square: pos, verbose: true });
@@ -21,10 +27,11 @@ function Square(props) {
             }
         }
         else {
-            props.setMoveTaken(!props.moveTaken);
-            props.setPossibleMoves([]);
             from.current = '';
             props.setBlackMove([]);
+            props.setPossibleMoves([]);
+            props.setMoveTaken(!props.moveTaken);
+
         }
     }
 
@@ -66,7 +73,7 @@ function Square(props) {
             className="square"
             style={{ backgroundColor: squareColor, border: '.1px solid #582c2c' }}
             onClick={handleClick}>
-            {props.piece !== null && <Piece type={props.piece.type} color={props.piece.color}/>}
+            {props.piece !== null && <Piece type={props.piece.type} color={props.piece.color} />}
         </div>
     )
 

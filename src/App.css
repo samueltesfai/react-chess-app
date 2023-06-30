@@ -47,6 +47,7 @@ img {
   height:40px;
   display: flex;
   align-items: center;
+  
 }
 
 button{
@@ -98,6 +99,7 @@ button{
   position: relative;
   left: 5px;
   width: 40%;
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 .number{
