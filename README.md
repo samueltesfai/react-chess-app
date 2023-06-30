@@ -2,6 +2,8 @@
 
 Chess AI is a project that combines Deep Learning and Chess Game AI to build an intelligent Chess application. This app allows users to play against an AI that utilizes neural networks to improve its move selection and gameplay strategy. This project demonstrates the effective combination of traditional game AI techniques with modern deep learning, opening a path to explore further improvements, optimizations, and potential adaptations to other strategic games.
 
+Source code can be found on master branch.
+
 [Click here for demo](https://samueltesfai.github.io/react-chess-app/)
 
 <img width="810" alt="209493958-90f8ec18-0452-46ae-aaf6-1f8eab431869" src="https://github.com/samueltesfai/react-chess-app/assets/67299283/eae015c0-e117-4329-94a9-cdab4a03b1a4">
